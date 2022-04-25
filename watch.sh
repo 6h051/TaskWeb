@@ -1,0 +1,1 @@
+watch -n 1  "sensors > file.txt && date > hora.txt && acpi > bateria.txt && uptime -p > uptime.txt && lux -G > brillo.txt
