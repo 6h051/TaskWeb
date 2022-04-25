@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tasks</title>
+  <meta charset="utf-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+    body {
+      background-color: black !important;
+      color: white;
+      font-family: "Quicksand" !important;
+
+    }
+
+    pre {
+      font-family: "Quicksand";
+      line-height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Temperatura</h1>
+  <pre id="demo">
+</pre>
+  <h1>Hora</h1>
+  <pre id="hora"></pre>
+  <h1>Batería</h1>
+  <pre id="bateria"></pre>
+  <h1>Saludo</h1>
+  <pre id="saludo"></pre>
+  <h1>Tiempo de uso</h1>
+  <pre id="uptime"></pre>
+  <h1>Brillo</h1>
+  <pre id="brillo"></pre>
+  <script type="text/javascript">
+    function get_latest_data() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        document.getElementById("demo").innerHTML =
+          this.responseText;
+      }
+      xhttp.open("GET", "file.txt");
+      xhttp.send();
+      setTimeout(get_latest_data, 1000);
+
+    }
+    get_latest_data();
+
+    function hora() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        document.getElementById("hora").innerHTML =
+          this.responseText;
+      }
+      xhttp.open("GET", "hora.txt");
+      xhttp.send();
+      setTimeout(hora, 1000);
+
+    }
+    hora();
+
+
+    function bateria() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        document.getElementById("bateria").innerHTML =
+          this.responseText;
+      }
+      xhttp.open("GET", "bateria.txt");
+      xhttp.send();
+      setTimeout(bateria, 1000);
+
+    }
+    bateria();
+
+    function saludo() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        document.getElementById("saludo").innerHTML =
+          this.responseText;
+      }
+      xhttp.open("GET", "saludo.txt");
+      xhttp.send();
+      setTimeout(saludo, 1000);
+    }
+    saludo();
+
+    function uptime() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        document.getElementById("uptime").innerHTML =
+          this.responseText;
+      }
+      xhttp.open("GET", "uptime.txt");
+      xhttp.send();
+      setTimeout(uptime, 1000);
+    }
+    uptime();
+
+    function brillo() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        document.getElementById("brillo").innerHTML =
+          this.responseText;
+      }
+      xhttp.open("GET", "brillo.txt");
+      xhttp.send();
+      setTimeout(brillo, 1000);
+    }
+    brillo();
+  </script>
+
+
+</body>
+
+</html>
